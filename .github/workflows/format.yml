@@ -15,7 +15,7 @@ jobs:
           poetry-version: 1.1.12
       - name: Install dependencies
         run: |
-          poetry install
+          python -m pip install nox
       - name: Check
         run: |
           nox -rs formatting_checking
