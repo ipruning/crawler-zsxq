@@ -1,0 +1,22 @@
+[flake8]
+ignore = E203,E402,E501,W503
+select =
+    W, # pycodestyle
+    E, # pycodestyle
+    C, # mccabe
+    F, # pyflakes
+exclude =
+    playground
+    __pycache__,
+    .git,
+    .github,
+    .nox,
+    .pytest_cache,
+    .venv,
+    .vscode
+import-order-style = google
+max-line-length = 120
+max-complexity = 10
+per-file-ignores = 
+    __init__.py: F401
+    noxfile.py: F401, F811

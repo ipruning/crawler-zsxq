@@ -127,3 +127,21 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Poetry
+poetry.lock
+
+# PyCharm
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Environment variables
+settings.ini
+
+# Playground
+playground/
+
+# Logs
+logs/
