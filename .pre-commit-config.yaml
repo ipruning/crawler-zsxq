@@ -1,5 +1,12 @@
 repos:
-  - hooks:
+  - repo: local
+    hooks:
+      - entry: poetry run isort .
+        id: isort
+        language: system
+        name: isort
+        types:
+          - python
       - entry: poetry run black .
         id: black
         language: system
@@ -12,10 +19,25 @@ repos:
         name: flake8
         types:
           - python
-    repo: local
-  - hooks:
+  - repo: local
+    hooks:
+      - id: detect-secrets
+        name: Detect secrets
+        language: python
+        entry: detect-secrets-hook
+        args: ["--baseline", ".secrets.baseline"]
+  # - repo: local
+  #   hooks:
+  #     - id: talisman-precommit
+  #       name: talisman
+  #       entry: bash -c 'if [ -n "${TALISMAN_HOME:-}" ]; then ${TALISMAN_HOME}/talisman_hook_script pre-commit; else echo "TALISMAN does not exist. Consider installing from https://github.com/thoughtworks/talisman . If you already have talisman installed, please ensure TALISMAN_HOME variable is set to where talisman_hook_script resides, for example, TALISMAN_HOME=${HOME}/.talisman/bin"; fi'
+  #       language: system
+  #       pass_filenames: false
+  #       types: [text]
+  #       verbose: true
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v2.28.0
+    hooks:
       - id: commitizen
         stages:
           - commit-msg
-    repo: https://github.com/commitizen-tools/commitizen
-    rev: v2.21.2
