@@ -22,11 +22,14 @@
 
 ### 1.0 Install
 
-- Clone GitHub Repository `git clone https://github.com/Spehhhhh/crawler-zsxq.git`
-- Switch to the directory `cd crawler-zsxq`
-
 ```bash
 # This project uses pipenv to manage the virtual environment.
+
+# Clone GitHub Repository
+$ git clone https://github.com/Spehhhhh/crawler-zsxq.git
+
+# Switch to the directory
+$ cd crawler-zsxq
 
 # Install Poetry
 $ curl -sSL https://install.python-poetry.org | python3 -
@@ -45,6 +48,9 @@ $ poetry lock --no-update
 
 # Run the main program
 $ poetry run python <files>
+
+# Install pre-commit
+$ pre-commit install
 ```
 
 ### 1.1 Name Convention

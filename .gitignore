@@ -145,3 +145,6 @@ playground/
 
 # Logs
 logs/
+
+# detect-secrets
+.secrets.baseline
